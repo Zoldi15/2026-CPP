@@ -1,8 +1,4 @@
-//
-// Created by User on 23-Sep-25.
-//
 #include "Point.h"
-
 #include <algorithm>
 #include <iostream>
 #include <cmath>

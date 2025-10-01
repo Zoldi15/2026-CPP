@@ -1,6 +1,7 @@
 #include <iostream>
+#include "PointSet.h"
 
 int main() {
-    std::cout << "Hello, Lab_03" << std::endl;
+    
     return 0;
 }
