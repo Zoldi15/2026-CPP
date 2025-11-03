@@ -6,6 +6,8 @@
 #define USER_H
 
 
+#include <iostream>
+
 #include "Quiz.h"
 #include <map>
 
@@ -17,7 +19,9 @@ class User {
 public:
     User(string name);
     void addResult(Quiz& quiz, double result);
-    void printResults();
+    void printResults(std::ostream& os = std::cout) const;
+
+    std::ostream& operator<<(ostream& os) const;
 };
 
 #endif //USER_H

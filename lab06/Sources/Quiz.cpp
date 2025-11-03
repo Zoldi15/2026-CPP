@@ -31,6 +31,7 @@ bool Quiz::operator<(const Quiz& a) const {
     return this->id < a.id;
 }
 
-ostream Quiz::operator<<(ostream s, const Quiz &a) const {
-    return s;
+std::ostream& operator<<(std::ostream &os, const Quiz& q){
+    os << q.name << endl;
+    return os;
 }

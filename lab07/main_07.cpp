@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <cstring>
+#include <random>
 #include <set>
 #include <vector>
 #include <string>
@@ -92,10 +93,14 @@ void f89() {
 
     string alphabet = "abcdefghijklmnopqrstuvwxyz";
     vector<char> weirdA(alphabet.begin(), alphabet.end());
-    shuffle(weirdA.begin(),weirdA.end(),1);
+    std::mt19937 rng(0); // fixed seed, deterministic result
+    shuffle(weirdA.begin(), weirdA.end(), rng);
 
+    auto indexOf = [&](char c) {
+        return std::find(weirdA.begin(), weirdA.end(), c) - weirdA.begin();
+    };
     sort(months.begin(), months.end(),
-        [&](string &a,string &b){return weirdA.at(a[0])<weirdA.at(b[0]);});
+         [&](string &a, string &b){ return indexOf(a[0]) < indexOf(b[0]); });
 
     for (int i=0;i<months.size();i++) cout << months[i] << endl;
 }

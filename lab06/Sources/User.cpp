@@ -18,8 +18,13 @@ void User::addResult(Quiz &quiz, double result) {
     this->results.emplace(quiz,result);
 }
 
-void User::printResults() {
+void User::printResults(std::ostream& os) const{
     for (auto& p:this->results) {
-        cout<<p.first<<":"<<p.second<<endl;
+        os<<p.first<<":"<<p.second<<endl;
     }
+}
+
+std::ostream & User::operator<<(ostream &os) const {
+    os<<"Name: "<<this->name<<endl;
+    return os;
 }

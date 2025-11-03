@@ -22,7 +22,8 @@ public:
     void finalize();
 
     bool operator<(const Quiz& a) const;
-    ostream operator<<(ostream s, const Quiz& a) const;
+
+    friend std::ostream & operator<<(std::ostream &os, const Quiz &q);
 };
 
 
