@@ -8,5 +8,7 @@ add_executable(lab6 main_06.cpp
         Headers/User.h
         Sources/QuizGame.cpp
         Headers/QuizGame.h
+        ../lab09/FileSystemItem.cpp
+        ../lab09/FileSystemItem.h
 )
 include_directories(Headers)
