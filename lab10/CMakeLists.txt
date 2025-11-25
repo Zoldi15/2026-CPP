@@ -5,4 +5,5 @@ add_executable(lab10 main_10.cpp
         GraduationDao.h
         StudentService.h
         StudentServiceImp1.cpp
-        StudentServiceImp1.h)
+        StudentServiceImp1.h
+        ../lab11/Settlement.h)

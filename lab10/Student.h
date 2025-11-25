@@ -30,14 +30,7 @@ public:
         grades.insert({subject, grade});
     }
     //!!!!!!!!!!!!!!!!!!
-    double getGrade(const string& subject) const {
-        try {
-            return grades.at(subject);
-        } catch (out_of_range& e) {
-            cout<<"Grade not found: "<<e.what()<<endl;
-            return -1;
-        }
-    }//throws out_of_range for nonexistent subject
+    double getGrade(const string& subject) const {return grades.at(subject);}//throws out_of_range for nonexistent subject
     const map<string, double> &getGrades() const {return grades;}
 
     void computeAverage() {
